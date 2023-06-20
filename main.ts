@@ -1,4 +1,7 @@
-let mySprite: Sprite = null
+function random () {
+	
+}
+let taart: Sprite = null
 scene.setBackgroundImage(img`
     cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
     cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
@@ -142,27 +145,28 @@ let mama = sprites.create(img`
 mama.setScale(4.5, ScaleAnchor.Middle)
 mama.setPosition(85, 55)
 forever(function () {
-    mySprite = sprites.create(img`
+    taart = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . f . . . . . . . . . 
-        . . . . . f 4 f . . . . . . . . 
-        . . . . . f 4 4 f . . . . . . . 
-        . . . . . . f 2 f . . . . . . . 
-        . . . . . . f 2 f . . . . . . . 
-        . . . . . . f 2 f . . . . . . . 
-        f f f f f f f 2 f f f f f f f f 
-        f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
-        f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
-        f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
-        f 3 e e e 3 4 e e 3 e 3 e e e f 
-        f e e e e 3 e e e 3 e e e e e f 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        f f f f f f f f f f f f f f f f 
+        f e e e e e e e e e e e e e e f 
+        f e e e e e e e e e e e e e e f 
+        f e e e e e e e e e e e e e e f 
+        f e e e e e e e e e e e e e e f 
+        f e e e e e e e e e e e e e e f 
         f e e e e e e e e e e e e e e f 
         f f f f f f f f f f f f f f f f 
         `, SpriteKind.Food)
-    mySprite.setPosition(0, 75)
-    mySprite.setScale(2, ScaleAnchor.Middle)
-    mySprite.setVelocity(50, 0)
+    taart.setPosition(0, 75)
+    taart.setScale(2, ScaleAnchor.Middle)
+    taart.setVelocity(50, 0)
     pause(1723)
-    mySprite.setVelocity(0, 0)
+    taart.setVelocity(0, 0)
+    random()
 })
