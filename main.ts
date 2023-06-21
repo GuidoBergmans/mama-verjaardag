@@ -1,7 +1,647 @@
 function random () {
-	
+    if (make_the_random_logic == 123) {
+        oven = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f c c c c c c c c c c c c c c f 
+            f c c c c f f f f f f c c c c f 
+            f c c c f f f f f f f f c c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c c c c c c c c c c c c c f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b f f f f b b b b b f 
+            f b b b f f 4 2 4 2 f f b b b f 
+            f b b f 4 2 4 2 4 4 2 2 f b b f 
+            f b b f 5 4 5 4 4 5 2 4 f b b f 
+            f f f f 4 2 4 5 2 4 5 2 f f f f 
+            `, SpriteKind.Player)
+        oven.changeScale(1.5, ScaleAnchor.Middle)
+        oven.setPosition(20, 30)
+        glazuren = sprites.create(img`
+            f f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 1 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 1 1 1 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 f f 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 f 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        glazuren.changeScale(1.5, ScaleAnchor.Middle)
+        glazuren.setPosition(80, 30)
+        kaars = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        kaars.changeScale(1.5, ScaleAnchor.Middle)
+        kaars.setPosition(140, 30)
+        pauseUntil(() => controller.anyButton.isPressed())
+        sprites.destroy(oven)
+        pauseUntil(() => controller.left.isPressed())
+        pauseUntil(() => controller.right.isPressed())
+        sprites.destroy(glazuren)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            f f f f f f f f f f f f f f f f 
+            f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
+            f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+            f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
+            f 3 e e e 3 4 e e 3 e 3 e e e f 
+            f e e e e 3 e e e 3 e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+        pauseUntil(() => controller.down.isPressed())
+        sprites.destroy(kaars)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f . . . . . . . . . 
+            . . . . . f 4 f . . . . . . . . 
+            . . . . . f 4 4 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            f f f f f f f 2 f f f f f f f f 
+            f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
+            f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+            f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
+            f 3 e e e 3 4 e e 3 e 3 e e e f 
+            f e e e e 3 e e e 3 e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+    } else if (make_the_random_logic == 321) {
+        kaars = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        kaars.changeScale(1.5, ScaleAnchor.Middle)
+        kaars.setPosition(20, 30)
+        glazuren = sprites.create(img`
+            f f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 1 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 1 1 1 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 f f 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 f 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        glazuren.changeScale(1.5, ScaleAnchor.Middle)
+        glazuren.setPosition(80, 30)
+        oven = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f c c c c c c c c c c c c c c f 
+            f c c c c f f f f f f c c c c f 
+            f c c c f f f f f f f f c c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c c c c c c c c c c c c c f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b f f f f b b b b b f 
+            f b b b f f 4 2 4 2 f f b b b f 
+            f b b f 4 2 4 2 4 4 2 2 f b b f 
+            f b b f 5 4 5 4 4 5 2 4 f b b f 
+            f f f f 4 2 4 5 2 4 5 2 f f f f 
+            `, SpriteKind.Player)
+        oven.changeScale(1.5, ScaleAnchor.Middle)
+        oven.setPosition(140, 30)
+        pauseUntil(() => controller.down.isPressed())
+        sprites.destroy(kaars)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f . . . . . . . . . 
+            . . . . . f 4 f . . . . . . . . 
+            . . . . . f 4 4 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            f f f f f f f f f f f f f f f f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+        pauseUntil(() => controller.left.isPressed())
+        pauseUntil(() => controller.right.isPressed())
+        sprites.destroy(glazuren)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f . . . . . . . . . 
+            . . . . . f 4 f . . . . . . . . 
+            . . . . . f 4 4 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            f f f f f f f 2 f f f f f f f f 
+            f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
+            f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+            f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
+            f 3 e e e 3 4 e e 3 e 3 e e e f 
+            f e e e e 3 e e e 3 e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+        pause(25)
+        pauseUntil(() => controller.anyButton.isPressed())
+        sprites.destroy(oven)
+    } else if (make_the_random_logic == 312) {
+        kaars = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        kaars.changeScale(1.5, ScaleAnchor.Middle)
+        kaars.setPosition(20, 30)
+        oven = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f c c c c c c c c c c c c c c f 
+            f c c c c f f f f f f c c c c f 
+            f c c c f f f f f f f f c c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c c c c c c c c c c c c c f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b f f f f b b b b b f 
+            f b b b f f 4 2 4 2 f f b b b f 
+            f b b f 4 2 4 2 4 4 2 2 f b b f 
+            f b b f 5 4 5 4 4 5 2 4 f b b f 
+            f f f f 4 2 4 5 2 4 5 2 f f f f 
+            `, SpriteKind.Player)
+        oven.changeScale(1.5, ScaleAnchor.Middle)
+        oven.setPosition(80, 30)
+        glazuren = sprites.create(img`
+            f f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 1 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 1 1 1 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 f f 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 f 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        glazuren.changeScale(1.5, ScaleAnchor.Middle)
+        glazuren.setPosition(140, 30)
+        pauseUntil(() => controller.down.isPressed())
+        sprites.destroy(kaars)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f . . . . . . . . . 
+            . . . . . f 4 f . . . . . . . . 
+            . . . . . f 4 4 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            f f f f f f f f f f f f f f f f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+        pause(25)
+        pauseUntil(() => controller.anyButton.isPressed())
+        sprites.destroy(oven)
+        pauseUntil(() => controller.left.isPressed())
+        pauseUntil(() => controller.right.isPressed())
+        sprites.destroy(glazuren)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f . . . . . . . . . 
+            . . . . . f 4 f . . . . . . . . 
+            . . . . . f 4 4 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            f f f f f f f 2 f f f f f f f f 
+            f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
+            f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+            f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
+            f 3 e e e 3 4 e e 3 e 3 e e e f 
+            f e e e e 3 e e e 3 e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+    } else if (make_the_random_logic == 132) {
+        oven = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f c c c c c c c c c c c c c c f 
+            f c c c c f f f f f f c c c c f 
+            f c c c f f f f f f f f c c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c c c c c c c c c c c c c f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b f f f f b b b b b f 
+            f b b b f f 4 2 4 2 f f b b b f 
+            f b b f 4 2 4 2 4 4 2 2 f b b f 
+            f b b f 5 4 5 4 4 5 2 4 f b b f 
+            f f f f 4 2 4 5 2 4 5 2 f f f f 
+            `, SpriteKind.Player)
+        oven.changeScale(1.5, ScaleAnchor.Middle)
+        oven.setPosition(20, 30)
+        kaars = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        kaars.changeScale(1.5, ScaleAnchor.Middle)
+        kaars.setPosition(80, 30)
+        glazuren = sprites.create(img`
+            f f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 1 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 1 1 1 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 f f 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 f 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        glazuren.changeScale(1.5, ScaleAnchor.Middle)
+        glazuren.setPosition(140, 30)
+        pauseUntil(() => controller.anyButton.isPressed())
+        sprites.destroy(oven)
+        pauseUntil(() => controller.down.isPressed())
+        sprites.destroy(kaars)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f . . . . . . . . . 
+            . . . . . f 4 f . . . . . . . . 
+            . . . . . f 4 4 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            f f f f f f f f f f f f f f f f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+        pauseUntil(() => controller.left.isPressed())
+        pauseUntil(() => controller.right.isPressed())
+        sprites.destroy(glazuren)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f . . . . . . . . . 
+            . . . . . f 4 f . . . . . . . . 
+            . . . . . f 4 4 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            f f f f f f f 2 f f f f f f f f 
+            f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
+            f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+            f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
+            f 3 e e e 3 4 e e 3 e 3 e e e f 
+            f e e e e 3 e e e 3 e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+    } else if (make_the_random_logic == 231) {
+        glazuren = sprites.create(img`
+            f f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 1 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 1 1 1 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 f f 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 f 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        glazuren.changeScale(1.5, ScaleAnchor.Middle)
+        glazuren.setPosition(20, 30)
+        kaars = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        kaars.changeScale(1.5, ScaleAnchor.Middle)
+        kaars.setPosition(80, 30)
+        oven = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f c c c c c c c c c c c c c c f 
+            f c c c c f f f f f f c c c c f 
+            f c c c f f f f f f f f c c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c c c c c c c c c c c c c f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b f f f f b b b b b f 
+            f b b b f f 4 2 4 2 f f b b b f 
+            f b b f 4 2 4 2 4 4 2 2 f b b f 
+            f b b f 5 4 5 4 4 5 2 4 f b b f 
+            f f f f 4 2 4 5 2 4 5 2 f f f f 
+            `, SpriteKind.Player)
+        oven.changeScale(1.5, ScaleAnchor.Middle)
+        oven.setPosition(140, 30)
+        pauseUntil(() => controller.left.isPressed())
+        pauseUntil(() => controller.right.isPressed())
+        sprites.destroy(glazuren)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            f f f f f f f f f f f f f f f f 
+            f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
+            f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+            f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
+            f 3 e e e 3 4 e e 3 e 3 e e e f 
+            f e e e e 3 e e e 3 e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+        pauseUntil(() => controller.down.isPressed())
+        sprites.destroy(kaars)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f . . . . . . . . . 
+            . . . . . f 4 f . . . . . . . . 
+            . . . . . f 4 4 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            f f f f f f f 2 f f f f f f f f 
+            f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
+            f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+            f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
+            f 3 e e e 3 4 e e 3 e 3 e e e f 
+            f e e e e 3 e e e 3 e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+        pauseUntil(() => controller.anyButton.isPressed())
+        sprites.destroy(oven)
+    } else {
+        glazuren = sprites.create(img`
+            f f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 1 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 1 1 1 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 f f 9 9 9 9 9 f 
+            f 9 9 9 9 9 f 3 3 3 f 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 f f f 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 3 3 3 3 3 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        glazuren.changeScale(1.5, ScaleAnchor.Middle)
+        glazuren.setPosition(20, 30)
+        oven = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f c c c c c c c c c c c c c c f 
+            f c c c c f f f f f f c c c c f 
+            f c c c f f f f f f f f c c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c f f f f f f f f f f c c f 
+            f c c c c c c c c c c c c c c f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b b b b b b b b b b f 
+            f b b b b b f f f f b b b b b f 
+            f b b b f f 4 2 4 2 f f b b b f 
+            f b b f 4 2 4 2 4 4 2 2 f b b f 
+            f b b f 5 4 5 4 4 5 2 4 f b b f 
+            f f f f 4 2 4 5 2 4 5 2 f f f f 
+            `, SpriteKind.Player)
+        oven.changeScale(1.5, ScaleAnchor.Middle)
+        oven.setPosition(80, 30)
+        kaars = sprites.create(img`
+            f f f f f f f f f f f f f f f f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 9 9 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 4 4 4 4 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 2 2 9 9 9 9 9 9 f 
+            f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 f 
+            f f f f f f f f f f f f f f f f 
+            `, SpriteKind.Player)
+        kaars.changeScale(1.5, ScaleAnchor.Middle)
+        kaars.setPosition(140, 30)
+        pauseUntil(() => controller.left.isPressed())
+        pauseUntil(() => controller.right.isPressed())
+        sprites.destroy(glazuren)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            f f f f f f f f f f f f f f f f 
+            f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
+            f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+            f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
+            f 3 e e e 3 4 e e 3 e 3 e e e f 
+            f e e e e 3 e e e 3 e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+        pauseUntil(() => controller.anyButton.isPressed())
+        sprites.destroy(oven)
+        pauseUntil(() => controller.down.isPressed())
+        sprites.destroy(kaars)
+        taart.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . f . . . . . . . . . 
+            . . . . . f 4 f . . . . . . . . 
+            . . . . . f 4 4 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            . . . . . . f 2 f . . . . . . . 
+            f f f f f f f 2 f f f f f f f f 
+            f 2 3 3 3 3 3 8 3 3 3 3 3 3 3 f 
+            f 3 3 3 3 3 3 3 3 3 3 3 3 3 3 f 
+            f 3 3 3 5 3 3 3 3 3 3 3 2 3 3 f 
+            f 3 e e e 3 4 e e 3 e 3 e e e f 
+            f e e e e 3 e e e 3 e e e e e f 
+            f e e e e e e e e e e e e e e f 
+            f f f f f f f f f f f f f f f f 
+            `)
+    }
+    info.stopCountdown()
+    taart.setVelocity(50, 0)
+    pause(1750)
+    sprites.destroy(taart)
 }
+info.onCountdownEnd(function () {
+    info.changeLifeBy(-1)
+    sprites.destroy(taart, effects.disintegrate, 250)
+})
+let random1 = 0
 let taart: Sprite = null
+let kaars: Sprite = null
+let glazuren: Sprite = null
+let oven: Sprite = null
+let make_the_random_logic = 0
+let timer = 0
 scene.setBackgroundImage(img`
     cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
     cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
@@ -144,7 +784,9 @@ let mama = sprites.create(img`
     `, SpriteKind.Player)
 mama.setScale(4.5, ScaleAnchor.Middle)
 mama.setPosition(85, 55)
+info.setLife(3)
 forever(function () {
+    timer = 0
     taart = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -168,5 +810,20 @@ forever(function () {
     taart.setVelocity(50, 0)
     pause(1723)
     taart.setVelocity(0, 0)
+    random1 = randint(0, 6)
+    if (random1 == 1) {
+        make_the_random_logic = 123
+    } else if (random1 == 2) {
+        make_the_random_logic = 321
+    } else if (random1 == 3) {
+        make_the_random_logic = 312
+    } else if (random1 == 4) {
+        make_the_random_logic = 132
+    } else if (random1 == 5) {
+        make_the_random_logic = 231
+    } else {
+        make_the_random_logic = 213
+    }
+    info.startCountdown(10)
     random()
 })
