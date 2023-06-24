@@ -206,6 +206,7 @@ function random () {
             f f f f f f f f f f f f f f f f 
             `)
         pause(25)
+        pauseUntil(() => !(controller.anyButton.isPressed()))
         pauseUntil(() => controller.anyButton.isPressed())
         sprites.destroy(oven)
     } else if (make_the_random_logic == 312) {
@@ -289,7 +290,7 @@ function random () {
             f e e e e e e e e e e e e e e f 
             f f f f f f f f f f f f f f f f 
             `)
-        pause(25)
+        pauseUntil(() => !(controller.anyButton.isPressed()))
         pauseUntil(() => controller.anyButton.isPressed())
         sprites.destroy(oven)
         pauseUntil(() => controller.left.isPressed())
@@ -519,6 +520,7 @@ function random () {
             f e e e e e e e e e e e e e e f 
             f f f f f f f f f f f f f f f f 
             `)
+        pauseUntil(() => !(controller.anyButton.isPressed()))
         pauseUntil(() => controller.anyButton.isPressed())
         sprites.destroy(oven)
     } else {
@@ -603,6 +605,7 @@ function random () {
             f e e e e e e e e e e e e e e f 
             f f f f f f f f f f f f f f f f 
             `)
+        pauseUntil(() => !(controller.anyButton.isPressed()))
         pauseUntil(() => controller.anyButton.isPressed())
         sprites.destroy(oven)
         pauseUntil(() => controller.down.isPressed())
@@ -626,6 +629,7 @@ function random () {
             f f f f f f f f f f f f f f f f 
             `)
     }
+    info.changeScoreBy(Math.round(info.countdown()))
     info.stopCountdown()
     taart.setVelocity(50, 0)
     pause(1750)
@@ -633,7 +637,6 @@ function random () {
 }
 info.onCountdownEnd(function () {
     info.changeLifeBy(-1)
-    sprites.destroy(taart, effects.disintegrate, 250)
 })
 let random1 = 0
 let taart: Sprite = null
@@ -641,6 +644,7 @@ let kaars: Sprite = null
 let glazuren: Sprite = null
 let oven: Sprite = null
 let make_the_random_logic = 0
+let tijd = 5
 let timer = 0
 scene.setBackgroundImage(img`
     cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
@@ -824,6 +828,7 @@ forever(function () {
     } else {
         make_the_random_logic = 213
     }
-    info.startCountdown(10)
+    info.startCountdown(tijd)
+    tijd = tijd * 0.8
     random()
 })
