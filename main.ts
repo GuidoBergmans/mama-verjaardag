@@ -638,13 +638,16 @@ function random () {
 info.onCountdownEnd(function () {
     info.changeLifeBy(-1)
 })
+info.onLifeZero(function () {
+    game.gameOver(true)
+})
 let random1 = 0
 let taart: Sprite = null
 let kaars: Sprite = null
 let glazuren: Sprite = null
 let oven: Sprite = null
 let make_the_random_logic = 0
-let tijd = 5
+let tijd = 10
 let timer = 0
 scene.setBackgroundImage(img`
     cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
