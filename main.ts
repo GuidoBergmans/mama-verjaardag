@@ -792,6 +792,11 @@ let mama = sprites.create(img`
 mama.setScale(4.5, ScaleAnchor.Middle)
 mama.setPosition(85, 55)
 info.setLife(3)
+game.onUpdate(function () {
+    if (controller.right.isPressed() && controller.down.isPressed() || (controller.left.isPressed() && controller.down.isPressed() || (controller.left.isPressed() && controller.right.isPressed() && controller.down.isPressed() || controller.left.isPressed() && controller.right.isPressed()))) {
+        game.gameOver(false)
+    }
+})
 forever(function () {
     timer = 0
     taart = sprites.create(img`
